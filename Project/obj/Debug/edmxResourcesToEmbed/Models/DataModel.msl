@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="modelModelStoreContainer" CdmEntityContainer="modelEntities">
+    <EntitySetMapping Name="Musteri">
+      <EntityTypeMapping TypeName="modelModel.Musteri">
+        <MappingFragment StoreEntitySet="Musteri">
+          <ScalarProperty Name="Sehir" ColumnName="Sehir" />
+          <ScalarProperty Name="Soyad" ColumnName="Soyad" />
+          <ScalarProperty Name="Ad" ColumnName="Ad" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sepet">
+      <EntityTypeMapping TypeName="modelModel.Sepet">
+        <MappingFragment StoreEntitySet="Sepet">
+          <ScalarProperty Name="MusteriId" ColumnName="MusteriId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SepetUrun">
+      <EntityTypeMapping TypeName="modelModel.SepetUrun">
+        <MappingFragment StoreEntitySet="SepetUrun">
+          <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+          <ScalarProperty Name="Tutar" ColumnName="Tutar" />
+          <ScalarProperty Name="SepetId" ColumnName="SepetId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

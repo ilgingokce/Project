@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="modelModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Musteri">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ad" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Soyad" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Sehir" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sepet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MusteriId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SepetUrun">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SepetId" Type="int" Nullable="false" />
+    <Property Name="Tutar" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Aciklama" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityContainer Name="modelModelStoreContainer">
+    <EntitySet Name="Musteri" EntityType="Self.Musteri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sepet" EntityType="Self.Sepet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SepetUrun" EntityType="Self.SepetUrun" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

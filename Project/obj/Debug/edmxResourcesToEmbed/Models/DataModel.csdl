@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="modelModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="modelEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Musteri" EntityType="modelModel.Musteri" />
+    <EntitySet Name="Sepet" EntityType="modelModel.Sepet" />
+    <EntitySet Name="SepetUrun" EntityType="modelModel.SepetUrun" />
+  </EntityContainer>
+  <EntityType Name="Musteri">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ad" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Soyad" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sehir" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Sepet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MusteriId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SepetUrun">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SepetId" Type="Int32" Nullable="false" />
+    <Property Name="Tutar" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Aciklama" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>
